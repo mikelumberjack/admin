@@ -68,3 +68,5 @@ class BasePage(object):
             .until(expected_conditions.element_to_be_clickable(Locators.SELECT_ALL)).click()
         self.loader_v2()
 
+    def get_quantity_selected_items(self):
+        return self.driver.find_element(*Locators.QUANTITY_OF_SELECTED_ITEMS).text

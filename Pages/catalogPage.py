@@ -37,9 +37,6 @@ class Catalog(BasePage):
         self.driver.find_element(*Locators.ADD_TO_CART).click()
         self.loader_v2()
 
-    def get_quantity_selected_items(self):
-        return self.driver.find_element(*Locators.QUANTITY_OF_SELECTED_ITEMS).text
-
     def get_total_on_page(self):  # quantity of total item on page
         total = self.driver.find_element(*Locators.TOTAL_ITEM).text
         return total.split(' ')[3]
