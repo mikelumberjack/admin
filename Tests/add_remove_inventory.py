@@ -41,9 +41,8 @@ class AddToInventoryTest(BaseTestCase):
         inventory.select_all()
         inventory.remove_from_inventory()
         inventory.confirm()
-        driver.refresh()
 
-   def test_add_more_than_100(self):
+    def test_add_more_than_100(self):
         driver = self.driver
         menu = Menu(driver)
         catalog = Catalog(driver)

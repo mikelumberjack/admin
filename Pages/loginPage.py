@@ -29,7 +29,7 @@ class LoginPage(BasePage):
         self.driver.find_element(*Locators.USERNAME).clear()
         self.driver.find_element(*Locators.USERNAME).send_keys(username)
 
-    def enter_password(self, password='232323'):
+    def enter_password(self, password='1234567'):
         self.driver.find_element(*Locators.PASSWORD).clear()
         self.driver.find_element(*Locators.PASSWORD).send_keys(password)
 
