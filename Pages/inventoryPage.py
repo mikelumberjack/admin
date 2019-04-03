@@ -1,3 +1,5 @@
+import time
+
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -32,6 +34,6 @@ class Inventory(BasePage):
             .until(expected_conditions.element_to_be_clickable(Locators.REMOVE_FROM_INVENTORY)).click()
 
     def confirm(self):
-        self.driver.switch_to.frame(self.driver.window_handles[1])
+        self.driver.switch_to.frame(self.driver.find_element(*Locators.REMOVE_FRAME))
         self.driver.find_element(*Locators.CONFIRM_REMOVE_BOTTOM).click()
         self.loader_v2()

@@ -11,7 +11,7 @@ class Locators(object):
     LOGIN_FRAME = (By.ID, 'fancybox-frame')
     USERNAME = (By.ID, 'login-username')
     PASSWORD = (By.ID, 'login-password')
-    LOGIN_SUBMIT_BOTTON = (By.XPATH, '//*[@id="login_form"]/input')
+    LOGIN_SUBMIT_BOTTON = (By.XPATH, '//*[@id="login_form"]/div[3]/button')
     INCORECT_USER_PASS = (By.XPATH, '/html/body/div[2]')
 
     # menu
@@ -45,6 +45,7 @@ class Locators(object):
 
 
     # inventoryPage
+    REMOVE_FRAME = (By.ID, 'intercom-frame')
     REMOVE_FROM_INVENTORY = (By.LINK_TEXT, 'REMOVE FROM MY INVENTORY')
     CONFIRM_REMOVE_BOTTOM = (By.LINK_TEXT, 'CONFIRM')
 

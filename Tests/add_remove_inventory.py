@@ -1,5 +1,3 @@
-import time
-
 from Tests.basetestcase import BaseTestCase
 from Pages.loginPage import LoginPage
 from Pages.catalogPage import Catalog
@@ -32,21 +30,20 @@ class AddToInventoryTest(BaseTestCase):
         for i in id_product:
             catalog.check_product(i)
         selected_items = catalog.get_selected_items()
-        self.assertEqual(len(selected_items), catalog.get_quantity_selected_items())
+        self.assertEqual(str(len(selected_items)), catalog.get_quantity_selected_items())
         catalog.add_to_inv_main()
 
         menu.go_to_inventory()
         inventory.select_category(category)
         inventory.select_sub_category(sub_category)
         total = inventory.get_total_items()
-        self.assertEqual(len(selected_items), total)
-        for i in id_product:
-            inventory.check_product(i)
+        self.assertEqual(str(len(selected_items)), total)
+        inventory.select_all()
         inventory.remove_from_inventory()
         inventory.confirm()
         driver.refresh()
 
-    def test_add_more_than_100(self):
+   def test_add_more_than_100(self):
         driver = self.driver
         menu = Menu(driver)
         catalog = Catalog(driver)
